@@ -4,10 +4,9 @@ from inspect import signature
 import torchaudio.transforms as transforms
 from fastai.data.block import TransformBlock
 from fastai.data.transforms import IntToFloatTensor
-from fastai.imports import Path, partial
+from fastai.imports import Path, partial, delegates, ifnone
 from fastcore.transform import Pipeline
-from fastcore.utils import delegates, ifnone
-from torchaudio import save as save_audio
+from torchaudio.backend.sox_io_backend import save as save_audio
 
 from ..augment.preprocess import Resample
 from ..augment.signal import DownmixMono, ResizeSignal
